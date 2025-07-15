@@ -1,5 +1,5 @@
 
-![Calculator Logo](assets/sprites/logo.png) 
+![Calculator Logo](assets/sprites/LOGO.png) 
 
 > **[Play the game now on Itch.io!](https://angelleyend.itch.io/calculator)**
 
