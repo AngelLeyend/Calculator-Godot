@@ -1,0 +1,127 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi7h0qevjlk8n"]
+
+[ext_resource type="Theme" uid="uid://dcbrlxc4s38uq" path="res://settings/theme.tres" id="1_fn23p"]
+[ext_resource type="Script" uid="uid://dftf0si1s5hh5" path="res://scripts/button.gd" id="1_gw2si"]
+[ext_resource type="LabelSettings" uid="uid://dhbjj7mg3qugb" path="res://settings/start_text.tres" id="1_ncptw"]
+[ext_resource type="Texture2D" uid="uid://b2vo3hmj1kwri" path="res://icon.svg" id="2_uehpw"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.765
+anchor_right = 0.5
+anchor_bottom = 0.765
+offset_left = -189.0
+offset_top = -55.72
+offset_right = 191.0
+offset_bottom = 50.28
+theme = ExtResource("1_fn23p")
+theme_type_variation = &"HeaderLarge"
+text = "Iniciar Juego"
+label_settings = ExtResource("1_ncptw")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer2" type="GridContainer" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 589.0
+offset_right = 349.0
+offset_bottom = 682.0
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("2_uehpw")
+expand_mode = 4
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("2_uehpw")
+expand_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/GridContainer2"]
+layout_mode = 2
+texture = ExtResource("2_uehpw")
+expand_mode = 5
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+offset_left = 172.0
+offset_top = 232.0
+offset_right = 1056.0
+offset_bottom = 568.0
+
+[node name="Label" type="Label" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+text = "aaaaaaaaaaaaaaaaaaaaaaaaa"
+
+[node name="Spacer" type="Control" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/h_separation = 240
+columns = 3
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_uehpw")
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_uehpw")
+
+[node name="TextureRect3" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/GridContainer"]
+layout_mode = 2
+texture = ExtResource("2_uehpw")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.043
+anchor_top = 0.028
+anchor_right = 0.043
+anchor_bottom = 0.028
+offset_left = 368.464
+offset_top = 327.856
+offset_right = 717.464
+offset_bottom = 436.856
+text = "Desaparece el circulo"
+script = ExtResource("1_gw2si")
+
+[node name="Polygon2D" type="Polygon2D" parent="Button"]
+visible = false
+position = Vector2(-179, -292)
+polygon = PackedVector2Array(4, 2, -20, 216, 717, 250, 669, 60, 511, -21)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.003
+anchor_right = 1.009
+anchor_bottom = 1.019
+offset_left = -9.0
+offset_top = -40.944
+offset_right = -0.368042
+offset_bottom = -0.312012
+color = Color(0.328544, 0.533129, 0.795021, 1)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

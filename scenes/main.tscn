@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://choxcjctrpps"]
+
+[ext_resource type="Script" uid="uid://duff04s3jbryh" path="res://scripts/begin_container.gd" id="1_0wfyh"]
+[ext_resource type="Texture2D" uid="uid://btr8ayyfmybxm" path="res://assets/sprites/LOGO.png" id="2_sugp2"]
+[ext_resource type="PackedScene" uid="uid://blkha6xty4ymd" path="res://scenes/desktop.tscn" id="3_sugp2"]
+[ext_resource type="Theme" uid="uid://dcbrlxc4s38uq" path="res://settings/theme.tres" id="4_jyhfs"]
+
+[node name="MainScene" type="Control" node_paths=PackedStringArray("logo", "label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0wfyh")
+logo = NodePath("CanvasBegin/BeginContainer/VBoxContainer/LogoTexture")
+label = NodePath("CanvasBegin/BeginContainer/VBoxContainer/Start_Label")
+
+[node name="SplashLayer" type="CanvasLayer" parent="."]
+layer = 99
+
+[node name="Desktop" parent="." instance=ExtResource("3_sugp2")]
+layout_mode = 1
+
+[node name="CanvasBegin" type="CanvasLayer" parent="."]
+layer = 13
+
+[node name="BeginContainer" type="MarginContainer" parent="CanvasBegin"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasBegin/BeginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="LogoTexture" type="TextureRect" parent="CanvasBegin/BeginContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_sugp2")
+stretch_mode = 3
+
+[node name="Start_Label" type="Label" parent="CanvasBegin/BeginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("4_jyhfs")
+text = "start_msg"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WIPLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1910.0
+offset_top = 12.0
+offset_right = -9.0
+offset_bottom = 139.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0, 0, 0, 0.631373)
+theme_override_font_sizes/font_size = 20
+text = "wip_message"
+horizontal_alignment = 2
+
+[node name="ButtonReverBegin" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 21.0
+offset_top = 779.0
+offset_right = 431.0
+offset_bottom = 927.0
+text = "boton revertir begining"
+
+[connection signal="gui_input" from="CanvasBegin/BeginContainer" to="." method="_on_gui_input"]
+[connection signal="pressed" from="ButtonReverBegin" to="." method="_on_button_pressed"]

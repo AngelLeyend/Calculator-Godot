@@ -1,0 +1,250 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2jltbsivdoge"]
+
+[ext_resource type="ButtonGroup" uid="uid://1oy3a6luyype" path="res://settings/aspectratio_button_group.tres" id="1_34uwu"]
+[ext_resource type="Theme" uid="uid://cmppt7l8qjl3e" path="res://themes/Ventanas.tres" id="1_obmnh"]
+[ext_resource type="Script" uid="uid://ddp4fa6yy3gpk" path="res://scripts/settings.gd" id="1_w3g5u"]
+[ext_resource type="Script" uid="uid://j4talgfv3kvx" path="res://scripts/res_options.gd" id="2_obmnh"]
+[ext_resource type="Theme" uid="uid://7o1ucgaksca5" path="res://themes/BarraArriba.tres" id="3_e7gat"]
+[ext_resource type="Theme" uid="uid://dfoguj5x5vwch" path="res://themes/popup.tres" id="6_aovxh"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_j40si"]
+action = &"close_window"
+
+[sub_resource type="Shortcut" id="Shortcut_obmnh"]
+events = [SubResource("InputEventAction_j40si")]
+
+[node name="ConfigMenuContainer" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.492
+anchor_right = 0.5
+anchor_bottom = 0.514
+offset_left = -535.5
+offset_top = -296.36
+offset_right = 535.5
+offset_bottom = 247.88
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_obmnh")
+script = ExtResource("1_w3g5u")
+metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_horizontal_guides_ = [541.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 45.0
+grow_horizontal = 2
+theme = ExtResource("3_e7gat")
+
+[node name="closebutton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.5
+offset_top = 3.0
+offset_right = -3.5
+offset_bottom = 33.0
+shortcut = SubResource("Shortcut_obmnh")
+shortcut_in_tooltip = false
+text = "x"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = 57
+theme_override_constants/margin_right = 100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 9
+
+[node name="Label4" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "res_options"
+
+[node name="OptionButton" type="OptionButton" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+script = ExtResource("2_obmnh")
+group = ExtResource("1_34uwu")
+
+[node name="Label3" type="Label" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "asprtio_options"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Button_16_9" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_34uwu")
+text = "16:9"
+
+[node name="Button_16_10" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_34uwu")
+text = "16:10"
+
+[node name="Button_4_3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_34uwu")
+text = "4:3"
+
+[node name="Button_21_9" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("1_34uwu")
+text = "21:9"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "fullscreen_option"
+vertical_alignment = 1
+
+[node name="FullscreenCheckBox" type="CheckBox" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ResetButton" type="Button" parent="MarginContainer/VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(256, 64)
+layout_mode = 2
+text = "reset_save"
+icon_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "volume_options"
+
+[node name="VolumeSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_obmnh")
+
+[node name="Label5" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "music_options"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "sfx_options"
+
+[node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 40
+
+[node name="ResetLayer" type="CanvasLayer" parent="."]
+layer = 89
+visible = false
+
+[node name="ResetPanel" type="Panel" parent="ResetLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="ResetLayer/ResetPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -248.0
+offset_top = -109.0
+offset_right = 248.0
+offset_bottom = 144.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_aovxh")
+
+[node name="MarginContainer" type="MarginContainer" parent="ResetLayer/ResetPanel/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "reset_message"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 10
+
+[node name="YesButton" type="Button" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "si"
+
+[node name="NoButton" type="Button" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "no"
+
+[node name="Control2" type="Control" parent="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[connection signal="mouse_entered" from="Panel/closebutton" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="pressed" from="Panel/closebutton" to="." method="_on_closebutton_pressed"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/OptionButton" to="MarginContainer/VBoxContainer/OptionButton" method="_on_item_selected"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/HBoxContainer2/FullscreenCheckBox" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/HBoxContainer2/FullscreenCheckBox" to="." method="_on_fullscreen_check_box_toggled"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/CenterContainer/ResetButton" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/CenterContainer/ResetButton" to="." method="_on_reset_button_pressed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_drag_ended"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="mouse_entered" from="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="pressed" from="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="mouse_entered" from="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="pressed" from="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_no_button_pressed"]

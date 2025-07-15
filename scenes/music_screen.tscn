@@ -1,0 +1,189 @@
+[gd_scene load_steps=9 format=3 uid="uid://8nw20ymbfhn1"]
+
+[ext_resource type="Script" uid="uid://boc0bmushb44j" path="res://scripts/music_container.gd" id="1_5e7r0"]
+[ext_resource type="Theme" uid="uid://cmppt7l8qjl3e" path="res://themes/Ventanas.tres" id="1_hc2i3"]
+[ext_resource type="Theme" uid="uid://7o1ucgaksca5" path="res://themes/BarraArriba.tres" id="3_wofgg"]
+[ext_resource type="Texture2D" uid="uid://saq4nlqhlg7a" path="res://assets/sprites/window_pressed.png" id="4_2k32o"]
+[ext_resource type="Theme" uid="uid://3aalf2vdg4nk" path="res://themes/iconos_music.tres" id="5_wofgg"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_5e7r0"]
+action = &"close_window"
+
+[sub_resource type="Shortcut" id="Shortcut_uwd5u"]
+events = [SubResource("InputEventAction_5e7r0")]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_pnonb"]
+texture = ExtResource("4_2k32o")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[node name="MusicContainer" type="Panel"]
+anchors_preset = -1
+anchor_left = 0.49
+anchor_top = 0.5
+anchor_right = 0.49
+anchor_bottom = 0.5
+offset_left = -542.8
+offset_top = -268.0
+offset_right = 541.2
+offset_bottom = 268.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_hc2i3")
+script = ExtResource("1_5e7r0")
+metadata/_edit_vertical_guides_ = [940.0]
+metadata/_edit_horizontal_guides_ = [540.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 42.0
+grow_horizontal = 2
+theme = ExtResource("3_wofgg")
+
+[node name="closebutton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -32.0
+offset_top = 2.0
+offset_right = -2.0
+offset_bottom = 32.0
+shortcut = SubResource("Shortcut_uwd5u")
+shortcut_in_tooltip = false
+text = "x"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.078
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 0.191998
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 31
+theme_override_constants/margin_right = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MusicLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "music_menu"
+horizontal_alignment = 1
+
+[node name="MusicContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer/MusicContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxTexture_pnonb")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MusicContainer/PanelContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="MusicLibrary" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MusicContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MusicInfoContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MusicContainer"]
+custom_minimum_size = Vector2(350, 128)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="MusicInfo" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MusicContainer/MusicInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActiveAlbumCover" type="TextureRect" parent="MarginContainer/VBoxContainer/MusicContainer/MusicInfoContainer/MusicInfo"]
+custom_minimum_size = Vector2(270, 270)
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ActiveSongLabel" type="Label" parent="MarginContainer/VBoxContainer/MusicContainer/MusicInfoContainer/MusicInfo"]
+layout_mode = 2
+autowrap_mode = 1
+
+[node name="ActiveArtistLabel" type="Label" parent="MarginContainer/VBoxContainer/MusicContainer/MusicInfoContainer/MusicInfo"]
+layout_mode = 2
+autowrap_mode = 2
+
+[node name="Control" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="BarraReproduccion" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="PreviousButton" type="Button" parent="MarginContainer/VBoxContainer/BarraReproduccion"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("5_wofgg")
+text = "E"
+
+[node name="PauseButton" type="Button" parent="MarginContainer/VBoxContainer/BarraReproduccion"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("5_wofgg")
+text = "D"
+
+[node name="NextButton" type="Button" parent="MarginContainer/VBoxContainer/BarraReproduccion"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("5_wofgg")
+text = "F"
+
+[node name="MusicSlider" type="HSlider" parent="MarginContainer/VBoxContainer/BarraReproduccion"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+
+[node name="LoopButton" type="Button" parent="MarginContainer/VBoxContainer/BarraReproduccion"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("5_wofgg")
+toggle_mode = true
+text = "I"
+
+[node name="RandomButton" type="Button" parent="MarginContainer/VBoxContainer/BarraReproduccion"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme = ExtResource("5_wofgg")
+toggle_mode = true
+text = "H"
+
+[node name="Control2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[connection signal="mouse_entered" from="Panel/closebutton" to="." method="_on_button_hovered"]
+[connection signal="pressed" from="Panel/closebutton" to="." method="_on_closebutton_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BarraReproduccion/PreviousButton" to="." method="_on_button_hovered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BarraReproduccion/PreviousButton" to="." method="_on_previous_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BarraReproduccion/PauseButton" to="." method="_on_button_hovered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BarraReproduccion/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BarraReproduccion/NextButton" to="." method="_on_button_hovered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/BarraReproduccion/NextButton" to="." method="_on_next_button_pressed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/BarraReproduccion/MusicSlider" to="." method="_on_music_slider_drag_ended"]
+[connection signal="drag_started" from="MarginContainer/VBoxContainer/BarraReproduccion/MusicSlider" to="." method="_on_music_slider_drag_started"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BarraReproduccion/LoopButton" to="." method="_on_button_hovered"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/BarraReproduccion/LoopButton" to="." method="_on_loop_button_toggled"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/BarraReproduccion/RandomButton" to="." method="_on_button_hovered"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/BarraReproduccion/RandomButton" to="." method="_on_random_button_toggled"]

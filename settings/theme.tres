@@ -1,0 +1,21 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://dcbrlxc4s38uq"]
+
+[ext_resource type="FontFile" uid="uid://tuk2ljfd1c1v" path="res://assets/fonts/Kenney Future.ttf" id="1_d63k7"]
+
+[sub_resource type="SystemFont" id="SystemFont_8tgk3"]
+font_names = PackedStringArray("Ravie")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_woi04"]
+bg_color = Color(0.943484, 0.42562, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cirg7"]
+bg_color = Color(0, 0.687329, 0.681737, 1)
+
+[resource]
+Button/font_sizes/font_size = 20
+Button/fonts/font = SubResource("SystemFont_8tgk3")
+Button/styles/normal = SubResource("StyleBoxFlat_woi04")
+HeaderLarge/colors/font_color = Color(0.977027, 0, 0.478646, 1)
+Label/font_sizes/font_size = 25
+Label/fonts/font = ExtResource("1_d63k7")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_cirg7")

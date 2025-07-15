@@ -1,0 +1,44 @@
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://0s3wvncip56i"]
+
+[ext_resource type="FontFile" uid="uid://7upj7cmv8hnd" path="res://assets/fonts/Audiowide-Regular.ttf" id="1_1ar2c"]
+[ext_resource type="Texture2D" uid="uid://3py1ddoy2h5f" path="res://assets/sprites/calculator_gld/calcg_button_hover.png" id="2_1ar2c"]
+[ext_resource type="Texture2D" uid="uid://c16a1cx4cef1x" path="res://assets/sprites/calculator_gld/calcg_button.png" id="3_1r517"]
+[ext_resource type="Texture2D" uid="uid://cnsfibu7j6qib" path="res://assets/sprites/calculator_gld/calcg_button_pressed.png" id="4_3u4wj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5teri"]
+texture = ExtResource("2_1ar2c")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0rm33"]
+texture = ExtResource("3_1r517")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gii0p"]
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_b6y03"]
+texture = ExtResource("4_3u4wj")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+Button/colors/font_color = Color(0.988235, 0.988235, 0.988235, 1)
+Button/colors/font_outline_color = Color(0.196703, 0.196682, 0.209627, 1)
+Button/constants/outline_size = 11
+Button/font_sizes/font_size = 80
+Button/fonts/font = ExtResource("1_1ar2c")
+Button/styles/hover = SubResource("StyleBoxTexture_5teri")
+Button/styles/normal = SubResource("StyleBoxTexture_0rm33")
+Button/styles/pressed = SubResource("StyleBoxTexture_gii0p")
+Panel/styles/panel = SubResource("StyleBoxTexture_b6y03")

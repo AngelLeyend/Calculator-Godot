@@ -1,0 +1,390 @@
+[gd_scene load_steps=30 format=3 uid="uid://blkha6xty4ymd"]
+
+[ext_resource type="Theme" uid="uid://lhms4ylh083g" path="res://themes/BarraInicio.tres" id="1_6r5gw"]
+[ext_resource type="Texture2D" uid="uid://bjfndheh7k0rm" path="res://assets/sprites/home.png" id="1_81rff"]
+[ext_resource type="Script" uid="uid://bwgqm6bsoigjy" path="res://scripts/time_label.gd" id="1_xxa2h"]
+[ext_resource type="Texture2D" uid="uid://c0ko5ogeppny" path="res://assets/sprites/home_hover.png" id="2_ox5hf"]
+[ext_resource type="Script" uid="uid://bfyqr5fm0lnmi" path="res://scripts/home_button.gd" id="3_6ajoh"]
+[ext_resource type="Texture2D" uid="uid://dqchakl6mtbst" path="res://assets/sprites/world.png" id="3_dcrhm"]
+[ext_resource type="Texture2D" uid="uid://sgs66daujmk6" path="res://assets/sprites/world_hover.png" id="4_6ajoh"]
+[ext_resource type="Script" uid="uid://b2diar14r3qga" path="res://scripts/lang_button.gd" id="6_pkmwo"]
+[ext_resource type="Script" uid="uid://ru5tit31it7m" path="res://scripts/panel_idiomas.gd" id="7_veafp"]
+[ext_resource type="Script" uid="uid://c2fl3eiqirq6x" path="res://scripts/panel_inicio.gd" id="8_nikxi"]
+[ext_resource type="Script" uid="uid://cyqtg1fojik0x" path="res://scripts/wallpaper_rect.gd" id="10_q2hki"]
+[ext_resource type="Script" uid="uid://uhbc62wmes8x" path="res://scripts/exit_pop_up_panel.gd" id="11_nikxi"]
+[ext_resource type="Texture2D" uid="uid://ccyycec63xbgc" path="res://assets/sprites/wallpapers/1.png" id="11_v08ca"]
+[ext_resource type="Theme" uid="uid://ddy1qwo87mfje" path="res://themes/BarrasMenu.tres" id="12_3liqb"]
+[ext_resource type="PackedScene" uid="uid://c81fy2ud17r8o" path="res://scenes/sumiko_widget.tscn" id="13_nd1jb"]
+[ext_resource type="Texture2D" uid="uid://bwfjtkr1pxxa5" path="res://assets/sprites/icons_menu/calc.png" id="14_3liqb"]
+[ext_resource type="Script" uid="uid://big8guu0oqqgr" path="res://scripts/music_player.gd" id="14_yhf0c"]
+[ext_resource type="Texture2D" uid="uid://bwjm72hpgecfk" path="res://assets/sprites/icons_menu/config.png" id="15_1dbpt"]
+[ext_resource type="Texture2D" uid="uid://bclqr3xwsjvtx" path="res://assets/sprites/icons_menu/arch.png" id="16_v08ca"]
+[ext_resource type="Texture2D" uid="uid://dujgwbecl1lt8" path="res://assets/sprites/icons_menu/credits.png" id="17_ifjoy"]
+[ext_resource type="Texture2D" uid="uid://b0qr3r40i5bx5" path="res://assets/sprites/icons_menu/wallpapers.png" id="18_0ovxq"]
+[ext_resource type="Texture2D" uid="uid://cq1wwwxfc8e8q" path="res://assets/sprites/icons_menu/music.png" id="19_8yfr8"]
+[ext_resource type="Texture2D" uid="uid://dwugw15idceb0" path="res://assets/sprites/icons_menu/exit.png" id="20_8f65n"]
+[ext_resource type="Theme" uid="uid://dfoguj5x5vwch" path="res://themes/popup.tres" id="22_v08ca"]
+
+[sub_resource type="Theme" id="Theme_xxa2h"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_yhf0c"]
+action = &"open_menu"
+
+[sub_resource type="Shortcut" id="Shortcut_vxgxr"]
+events = [SubResource("InputEventAction_yhf0c")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_6r5gw"]
+action = &"open_lang"
+
+[sub_resource type="Shortcut" id="Shortcut_3liqb"]
+events = [SubResource("InputEventAction_6r5gw")]
+
+[node name="Desktop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+metadata/_edit_horizontal_guides_ = [16.0]
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="BarraInicio" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Panel" type="Panel" parent="BarraInicio"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("1_6r5gw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="BarraInicio/Panel"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = SubResource("Theme_xxa2h")
+alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="BarraInicio/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+
+[node name="HomeButton" type="TextureButton" parent="BarraInicio/Panel/HBoxContainer/MarginContainer2" node_paths=PackedStringArray("MenuInicio", "MenuIdiomas", "PanelInicio")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_vxgxr")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("1_81rff")
+texture_hover = ExtResource("2_ox5hf")
+stretch_mode = 3
+script = ExtResource("3_6ajoh")
+MenuInicio = NodePath("../../../../../MenuInicio")
+MenuIdiomas = NodePath("../../../../../MenuIdiomas")
+PanelInicio = NodePath("../../../../../MenuInicio/PanelInicio")
+
+[node name="Control" type="Control" parent="BarraInicio/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+
+[node name="LangButton" type="TextureButton" parent="BarraInicio/Panel/HBoxContainer" node_paths=PackedStringArray("MenuIdiomas", "MenuInicio", "PanelIdiomas")]
+layout_mode = 2
+shortcut = SubResource("Shortcut_3liqb")
+shortcut_in_tooltip = false
+texture_normal = ExtResource("3_dcrhm")
+texture_hover = ExtResource("4_6ajoh")
+stretch_mode = 3
+script = ExtResource("6_pkmwo")
+MenuIdiomas = NodePath("../../../../MenuIdiomas")
+MenuInicio = NodePath("../../../../MenuInicio")
+PanelIdiomas = NodePath("../../../../MenuIdiomas/PanelIdiomas")
+
+[node name="MarginContainer" type="MarginContainer" parent="BarraInicio/Panel/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 15
+
+[node name="TimeLabel" type="Label" parent="BarraInicio/Panel/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_6r5gw")
+theme_override_font_sizes/font_size = 46
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_xxa2h")
+
+[node name="Timer" type="Timer" parent="BarraInicio/Panel/HBoxContainer/MarginContainer/TimeLabel"]
+autostart = true
+
+[node name="MenuIdiomas" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PanelIdiomas" type="PanelContainer" parent="MenuIdiomas"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -589.0
+offset_top = -387.0
+offset_right = -202.0
+offset_bottom = -100.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = ExtResource("12_3liqb")
+script = ExtResource("7_veafp")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MenuIdiomas/PanelIdiomas"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuIdiomas/PanelIdiomas/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 3
+
+[node name="ENButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "lang_en"
+alignment = 0
+
+[node name="ESButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "lang_es"
+alignment = 0
+
+[node name="ES_CLButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "lang_es_CL"
+alignment = 0
+
+[node name="PTButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "lang_pt"
+alignment = 0
+
+[node name="FRButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "lang_fr"
+alignment = 0
+
+[node name="DEButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "lang_de"
+alignment = 0
+
+[node name="RUButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "lang_ru"
+alignment = 0
+
+[node name="ITButton" type="Button" parent="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+text = "lang_it"
+alignment = 0
+
+[node name="LogroPopUpLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="WallpaperRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_v08ca")
+expand_mode = 3
+stretch_mode = 6
+script = ExtResource("10_q2hki")
+metadata/_edit_lock_ = true
+
+[node name="MenuInicio" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="PanelInicio" type="PanelContainer" parent="MenuInicio"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -564.0
+offset_right = 545.0
+offset_bottom = -100.0
+grow_vertical = 0
+theme = ExtResource("12_3liqb")
+script = ExtResource("8_nikxi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MenuInicio/PanelInicio"]
+layout_mode = 2
+theme = ExtResource("12_3liqb")
+theme_override_constants/separation = 2
+
+[node name="CalcButton" type="Button" parent="MenuInicio/PanelInicio/VBoxContainer"]
+layout_mode = 2
+text = "calc_window"
+icon = ExtResource("14_3liqb")
+alignment = 0
+
+[node name="ConfigButton" type="Button" parent="MenuInicio/PanelInicio/VBoxContainer"]
+layout_mode = 2
+text = "config_menu"
+icon = ExtResource("15_1dbpt")
+alignment = 0
+
+[node name="ArchivButton" type="Button" parent="MenuInicio/PanelInicio/VBoxContainer"]
+layout_mode = 2
+text = "archiv_menu"
+icon = ExtResource("16_v08ca")
+alignment = 0
+
+[node name="CreditsButton" type="Button" parent="MenuInicio/PanelInicio/VBoxContainer"]
+layout_mode = 2
+text = "credits_menu"
+icon = ExtResource("17_ifjoy")
+alignment = 0
+
+[node name="CustomConfButton" type="Button" parent="MenuInicio/PanelInicio/VBoxContainer"]
+layout_mode = 2
+text = "custom_conf_menu"
+icon = ExtResource("18_0ovxq")
+alignment = 0
+
+[node name="MusicButton" type="Button" parent="MenuInicio/PanelInicio/VBoxContainer"]
+layout_mode = 2
+text = "music_menu"
+icon = ExtResource("19_8yfr8")
+alignment = 0
+
+[node name="ExitButton" type="Button" parent="MenuInicio/PanelInicio/VBoxContainer"]
+visible = false
+layout_mode = 2
+text = "exit_menu"
+icon = ExtResource("20_8f65n")
+alignment = 0
+
+[node name="WindowsLayer" type="CanvasLayer" parent="."]
+layer = 0
+
+[node name="ExitPupUp" type="CanvasLayer" parent="."]
+layer = 11
+visible = false
+
+[node name="ExitPopUpPanel" type="Panel" parent="ExitPupUp"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_nikxi")
+
+[node name="PanelContainer" type="PanelContainer" parent="ExitPupUp/ExitPopUpPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 739.0
+offset_top = 363.0
+offset_right = -739.0
+offset_bottom = -497.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("22_v08ca")
+
+[node name="MarginContainer" type="MarginContainer" parent="ExitPupUp/ExitPopUpPanel/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Control3" type="Control" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "exit_mesage"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Control" type="Control" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="YesButton" type="Button" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "si"
+
+[node name="NoButton" type="Button" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "no"
+
+[node name="Control2" type="Control" parent="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SumikoWidget" parent="." instance=ExtResource("13_nd1jb")]
+layout_mode = 1
+offset_right = 0.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+script = ExtResource("14_yhf0c")
+
+[connection signal="mouse_entered" from="BarraInicio/Panel/HBoxContainer/MarginContainer2/HomeButton" to="BarraInicio/Panel/HBoxContainer/MarginContainer2/HomeButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="BarraInicio/Panel/HBoxContainer/MarginContainer2/HomeButton" to="BarraInicio/Panel/HBoxContainer/MarginContainer2/HomeButton" method="_on_pressed"]
+[connection signal="mouse_entered" from="BarraInicio/Panel/HBoxContainer/LangButton" to="BarraInicio/Panel/HBoxContainer/LangButton" method="_on_mouse_entered"]
+[connection signal="pressed" from="BarraInicio/Panel/HBoxContainer/LangButton" to="BarraInicio/Panel/HBoxContainer/LangButton" method="_on_pressed"]
+[connection signal="timeout" from="BarraInicio/Panel/HBoxContainer/MarginContainer/TimeLabel/Timer" to="BarraInicio/Panel/HBoxContainer/MarginContainer/TimeLabel" method="_on_timer_timeout"]
+[connection signal="mouse_entered" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ENButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ENButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_pressed" binds= ["en"]]
+[connection signal="mouse_entered" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ESButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ESButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_pressed" binds= ["es"]]
+[connection signal="mouse_entered" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ES_CLButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ES_CLButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_pressed" binds= ["es_CL"]]
+[connection signal="pressed" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/PTButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_pressed" binds= ["pt"]]
+[connection signal="mouse_entered" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/FRButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/FRButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_pressed" binds= ["fr"]]
+[connection signal="mouse_entered" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/DEButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/DEButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_pressed" binds= ["de"]]
+[connection signal="mouse_entered" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ITButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuIdiomas/PanelIdiomas/ScrollContainer/VBoxContainer/ITButton" to="MenuIdiomas/PanelIdiomas" method="_on_button_pressed" binds= ["it"]]
+[connection signal="mouse_entered" from="MenuInicio/PanelInicio/VBoxContainer/CalcButton" to="MenuInicio/PanelInicio" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuInicio/PanelInicio/VBoxContainer/CalcButton" to="MenuInicio/PanelInicio" method="_on_calc_button_pressed"]
+[connection signal="mouse_entered" from="MenuInicio/PanelInicio/VBoxContainer/ConfigButton" to="MenuInicio/PanelInicio" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuInicio/PanelInicio/VBoxContainer/ConfigButton" to="MenuInicio/PanelInicio" method="_on_config_button_pressed"]
+[connection signal="mouse_entered" from="MenuInicio/PanelInicio/VBoxContainer/ArchivButton" to="MenuInicio/PanelInicio" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuInicio/PanelInicio/VBoxContainer/ArchivButton" to="MenuInicio/PanelInicio" method="_on_archiv_button_pressed"]
+[connection signal="mouse_entered" from="MenuInicio/PanelInicio/VBoxContainer/CreditsButton" to="MenuInicio/PanelInicio" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuInicio/PanelInicio/VBoxContainer/CreditsButton" to="MenuInicio/PanelInicio" method="_on_credits_button_pressed"]
+[connection signal="mouse_entered" from="MenuInicio/PanelInicio/VBoxContainer/CustomConfButton" to="MenuInicio/PanelInicio" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuInicio/PanelInicio/VBoxContainer/CustomConfButton" to="MenuInicio/PanelInicio" method="_on_custom_conf_button_pressed"]
+[connection signal="mouse_entered" from="MenuInicio/PanelInicio/VBoxContainer/MusicButton" to="MenuInicio/PanelInicio" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuInicio/PanelInicio/VBoxContainer/MusicButton" to="MenuInicio/PanelInicio" method="_on_music_button_pressed"]
+[connection signal="mouse_entered" from="MenuInicio/PanelInicio/VBoxContainer/ExitButton" to="MenuInicio/PanelInicio" method="_on_button_hovered"]
+[connection signal="pressed" from="MenuInicio/PanelInicio/VBoxContainer/ExitButton" to="MenuInicio/PanelInicio" method="_on_exit_button_pressed"]
+[connection signal="mouse_entered" from="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="ExitPupUp/ExitPopUpPanel" method="_on_button_hovered"]
+[connection signal="pressed" from="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="ExitPupUp/ExitPopUpPanel" method="_on_yes_button_pressed"]
+[connection signal="mouse_entered" from="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoButton" to="ExitPupUp/ExitPopUpPanel" method="_on_button_hovered"]
+[connection signal="pressed" from="ExitPupUp/ExitPopUpPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoButton" to="ExitPupUp/ExitPopUpPanel" method="_on_no_button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="AudioStreamPlayer" method="_on_finished"]

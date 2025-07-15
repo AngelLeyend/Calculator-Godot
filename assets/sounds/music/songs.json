@@ -1,0 +1,44 @@
+[
+	{
+		"title": "Nostalgie",
+		"artist": "t12ya",
+		"duration": "3:52",
+		"audio_path": "res://assets/sounds/music/song1.ogg",
+		"cover_path": "res://assets/sounds/music/song1.png"
+	},
+	{
+		"title": "Night wind",
+		"artist": "Crep",
+		"duration": "4:07",
+		"audio_path": "res://assets/sounds/music/song2.ogg",
+		"cover_path": "res://assets/sounds/music/song2.png"
+	},
+	{
+		"title": "Lofi_NightTrain",
+		"artist": "nekoto",
+		"duration": "1:52",
+		"audio_path": "res://assets/sounds/music/song3.ogg",
+		"cover_path": "res://assets/sounds/music/song3.png"
+	},
+	{
+		"title": "Flowers at night",
+		"artist": "Flehmann",
+		"duration": "2:30",
+		"audio_path": "res://assets/sounds/music/song4.ogg",
+		"cover_path": "res://assets/sounds/music/song4.png"
+	},
+	{
+		"title": "Shibuya Nightscape",
+		"artist": "オオヒラセイジ",
+		"duration": "2:20",
+		"audio_path": "res://assets/sounds/music/song5.ogg",
+		"cover_path": "res://assets/sounds/music/song5.png"
+	},
+	{
+		"title": "Cafe 3-chome",
+		"artist": "Crep",
+		"duration": "2:25",
+		"audio_path": "res://assets/sounds/music/song6.ogg",
+		"cover_path": "res://assets/sounds/music/song6.png"
+	}
+]

@@ -1,0 +1,40 @@
+[
+	{
+		"role": "credits_sumiko_art",
+		"members": ["@lancibar|https://twitter.com/XLanci","@Pik_Anime|https://twitter.com/Pik_Anime"]
+	},	
+	{
+		"role": "credits_coding",
+		"members": ["Angel Issac Lopez|https://github.com/AngelLeyend"]
+	},
+	{
+		"role": "credits_covers",
+		"members": ["Freepik|https://www.freepik.com"]
+	},
+	{
+		"role": "credits_sounds",
+		"members": ["Kenney Assets|https://kenney.nl", 
+					"DOVA SYNDROME|https://dova-s.jp"]
+	},
+	{
+		"role": "credits_images",
+		"members": ["Kenney Assets|https://kenney.nl", 
+		"Craftpix|https://craftpix.net"]
+	},
+	
+	{
+		"role": "credits_fonts",
+		"members": ["Pocket Calculator|https://font.download/font/pocket-calculator",
+					"Kenney Assets|https://kenney.nl",
+					"Audiowide|https://fonts.google.com/specimen/Audiowide"]
+	},
+	{
+		"role": "credits_music",
+		"members": ["Nostalgie - t12ya|https://dova-s.jp/EN/bgm/play21917.html", 
+					"Night wind - Crep|https://dova-s.jp/EN/bgm/play21043.html",
+					"Lofi_NightTrain - nekoto|https://dova-s.jp/EN/bgm/play19202.html",
+					"Flowers at night - Flehmann|https://dova-s.jp/EN/bgm/play17289.html",
+					"Shibuya Nightscape - オオヒラセイジ|https://dova-s.jp/EN/bgm/play17175.html",
+					"Cafe 3-chome - Crep|https://dova-s.jp/EN/bgm/play18372.html"]
+	}
+]

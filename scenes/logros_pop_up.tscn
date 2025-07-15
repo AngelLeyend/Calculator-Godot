@@ -1,0 +1,105 @@
+[gd_scene load_steps=6 format=3 uid="uid://diusr0ijareov"]
+
+[ext_resource type="Texture2D" uid="uid://bvvnm6jl82n7c" path="res://assets/sprites/logro_on.png" id="1_graim"]
+[ext_resource type="Script" uid="uid://q300kfayieyv" path="res://scripts/logros_pop_up.gd" id="1_k1oyr"]
+[ext_resource type="Theme" uid="uid://cmppt7l8qjl3e" path="res://themes/Ventanas.tres" id="2_0a4d1"]
+[ext_resource type="Texture2D" uid="uid://saq4nlqhlg7a" path="res://assets/sprites/window_pressed.png" id="3_gt54i"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8v5fe"]
+texture = ExtResource("3_gt54i")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[node name="LogrosPopUp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k1oyr")
+metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_horizontal_guides_ = [540.0]
+
+[node name="PopUpCanvas" type="CanvasLayer" parent="."]
+
+[node name="BackPanel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.463
+anchor_top = 0.502
+anchor_right = 0.54
+anchor_bottom = 0.502
+offset_left = -416.46
+offset_top = -211.16
+offset_right = 410.7
+offset_bottom = 204.84
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_0a4d1")
+theme_override_styles/panel = SubResource("StyleBoxTexture_8v5fe")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_graim")
+expand_mode = 2
+stretch_mode = 3
+
+[node name="CenteredContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/HBoxContainer/CenteredContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="label_name" type="Label" parent="PanelContainer/HBoxContainer/CenteredContainer/VBoxContainer"]
+layout_mode = 2
+text = "wsadwa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer/CenteredContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="label_desc" type="Label" parent="PanelContainer/HBoxContainer/CenteredContainer/VBoxContainer"]
+layout_mode = 2
+text = "Obtén como resultado un número diabólico"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer/CenteredContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="label_obtained" type="Label" parent="PanelContainer/HBoxContainer/CenteredContainer/VBoxContainer"]
+layout_mode = 2
+text = "archiv_date_unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="label_date" type="Label" parent="PanelContainer/HBoxContainer/CenteredContainer/VBoxContainer"]
+layout_mode = 2
+text = "06-05-2025"
+horizontal_alignment = 1
+vertical_alignment = 1

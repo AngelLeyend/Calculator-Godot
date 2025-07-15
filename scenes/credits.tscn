@@ -1,0 +1,157 @@
+[gd_scene load_steps=6 format=3 uid="uid://n85fk7rgmrdc"]
+
+[ext_resource type="Script" uid="uid://bctaimp4a1me5" path="res://scripts/credits_panel.gd" id="1_0bpdh"]
+[ext_resource type="Theme" uid="uid://cmppt7l8qjl3e" path="res://themes/Ventanas.tres" id="1_2ckv8"]
+[ext_resource type="Theme" uid="uid://7o1ucgaksca5" path="res://themes/BarraArriba.tres" id="3_0ctdu"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_0bpdh"]
+action = &"close_window"
+
+[sub_resource type="Shortcut" id="Shortcut_2ckv8"]
+events = [SubResource("InputEventAction_0bpdh")]
+
+[node name="CreditsPanel" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -514.0
+offset_top = -254.0
+offset_right = 513.0
+offset_bottom = 253.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2ckv8")
+theme_type_variation = &"Window"
+script = ExtResource("1_0bpdh")
+metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_horizontal_guides_ = [540.0]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 57.0
+offset_right = -69.0
+offset_bottom = -407.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_2ckv8")
+bbcode_enabled = true
+text = "credits_menu"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 2
+anchor_right = 1.0
+offset_left = 50.0
+offset_top = 60.0
+offset_right = -50.0
+offset_bottom = 89.0
+theme = ExtResource("1_2ckv8")
+theme_override_font_sizes/font_size = 27
+text = "credits_menu"
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+offset_left = 4.0
+offset_top = 5.0
+offset_right = -4.0
+offset_bottom = 45.0
+theme = ExtResource("3_0ctdu")
+
+[node name="closebutton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -33.0
+offset_top = 3.0
+offset_right = -3.0
+offset_bottom = 33.0
+theme = ExtResource("3_0ctdu")
+shortcut = SubResource("Shortcut_2ckv8")
+shortcut_in_tooltip = false
+text = "x"
+text_overrun_behavior = 1
+autowrap_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+anchor_right = 1.0
+offset_left = 21.0
+offset_top = 100.0
+offset_right = -21.0
+offset_bottom = 452.0
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 35
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="LinkButton" type="LinkButton" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_2ckv8")
+text = "credits_src"
+uri = "https://github.com/AngelLeyend/Calculator-Godot"
+text_direction = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+autowrap_mode = 2
+tab_size = 0
+
+[node name="CreditsContainer" type="GridContainer" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/h_separation = 150
+theme_override_constants/v_separation = 23
+columns = 2
+
+[node name="Label1" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/CreditsContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/CreditsContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/CreditsContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/CreditsContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/CreditsContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer/CreditsContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[node name="LabelExclusive" type="Label" parent="ScrollContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+horizontal_alignment = 1
+
+[connection signal="mouse_entered" from="Panel/closebutton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel/closebutton" to="." method="_on_closebutton_pressed"]
+[connection signal="mouse_entered" from="ScrollContainer/MarginContainer/VBoxContainer/LinkButton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="ScrollContainer/MarginContainer/VBoxContainer/LinkButton" to="." method="_on_link_button_pressed"]

@@ -1,0 +1,129 @@
+[gd_scene load_steps=10 format=3 uid="uid://bi1qto4p18dmr"]
+
+[ext_resource type="Script" uid="uid://dxfss8nhokh7u" path="res://scripts/sumiko_intro.gd" id="1_1yqpp"]
+[ext_resource type="Texture2D" uid="uid://msm8djw6gdi1" path="res://assets/sprites/sumiko/sumiko_3.png" id="2_xfv3t"]
+[ext_resource type="AudioStream" uid="uid://bdw2ed2dok5t7" path="res://assets/sounds/ui/click2.ogg" id="3_fdoyo"]
+[ext_resource type="Theme" uid="uid://c2a18rwd6u0co" path="res://themes/dialog_box.tres" id="3_xfv3t"]
+[ext_resource type="Theme" uid="uid://dcbrlxc4s38uq" path="res://settings/theme.tres" id="3_y6m5q"]
+[ext_resource type="Texture2D" uid="uid://8d34l4r7w8k1" path="res://assets/sprites/sumiko_button.png" id="5_nwg8r"]
+[ext_resource type="Texture2D" uid="uid://cxt1jfvdm8hke" path="res://assets/sprites/sumiko_hover.png" id="6_iyir7"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_y6m5q"]
+action = &"close_window"
+
+[sub_resource type="Shortcut" id="Shortcut_xfv3t"]
+events = [SubResource("InputEventAction_y6m5q")]
+
+[node name="SumikoIntro" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_1yqpp")
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 15
+visible = false
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SumikoSprite" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.526
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -536.0
+offset_top = -512.08
+offset_right = 536.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_xfv3t")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DialogueContainer" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -578.49
+offset_top = -337.0
+offset_right = 578.51
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_xfv3t")
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/DialogueContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="DialogueLabel" type="RichTextLabel" parent="CanvasLayer/DialogueContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_y6m5q")
+theme_override_font_sizes/normal_font_size = 35
+bbcode_enabled = true
+text = "placeholder"
+
+[node name="SkipButton" type="Button" parent="CanvasLayer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 445.0
+offset_top = -107.0
+offset_right = 576.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_xfv3t")
+shortcut = SubResource("Shortcut_xfv3t")
+shortcut_in_tooltip = false
+text = "skip"
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(0.0431373, 1, 1, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="SumikoIntroButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 372.0
+offset_bottom = 352.0
+texture_normal = ExtResource("5_nwg8r")
+texture_hover = ExtResource("6_iyir7")
+stretch_mode = 5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_fdoyo")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/Panel" to="." method="_on_panel_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/SumikoSprite" to="." method="_on_panel_gui_input"]
+[connection signal="gui_input" from="CanvasLayer/DialogueContainer" to="." method="_on_dialogue_container_gui_input"]
+[connection signal="mouse_entered" from="CanvasLayer/SkipButton" to="." method="_on_button_hovered"]
+[connection signal="pressed" from="CanvasLayer/SkipButton" to="." method="_on_skip_button_pressed"]
+[connection signal="mouse_entered" from="SumikoIntroButton" to="." method="_on_sumiko_intro_button_mouse_entered"]
+[connection signal="pressed" from="SumikoIntroButton" to="." method="_on_sumiko_intro_button_pressed"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://crp8yl17finif"]
+
+[ext_resource type="Texture2D" uid="uid://bvvnm6jl82n7c" path="res://assets/sprites/logro_on.png" id="1_0dcv4"]
+[ext_resource type="Texture2D" uid="uid://c16yxj7la72ou" path="res://assets/sprites/logro_hover.png" id="2_5rfn1"]
+[ext_resource type="Texture2D" uid="uid://cbglajuy1qpeo" path="res://assets/sprites/logro_off.png" id="2_q36f2"]
+[ext_resource type="Texture2D" uid="uid://piyrn6rwispx" path="res://assets/sprites/logro_pressed.png" id="2_w8omk"]
+
+[node name="SingleLogroContainer" type="VBoxContainer"]
+
+[node name="LogroButton" type="TextureButton" parent="."]
+layout_mode = 2
+texture_normal = ExtResource("1_0dcv4")
+texture_pressed = ExtResource("2_w8omk")
+texture_hover = ExtResource("2_5rfn1")
+texture_disabled = ExtResource("2_q36f2")
+
+[node name="LogroLabel" type="Label" parent="."]
+visible = false
+layout_mode = 2
+text = "logro_1"
+horizontal_alignment = 1

@@ -1,0 +1,99 @@
+[gd_scene load_steps=7 format=3 uid="uid://crf652e7moyl3"]
+
+[ext_resource type="Script" uid="uid://vnlmcxuujaab" path="res://scripts/sumiko_ending.gd" id="1_fsqr5"]
+[ext_resource type="Texture2D" uid="uid://dsp77212xns27" path="res://assets/sprites/sumiko/sumiko_1.png" id="2_ujyej"]
+[ext_resource type="Theme" uid="uid://c2a18rwd6u0co" path="res://themes/dialog_box.tres" id="3_ujyej"]
+[ext_resource type="AudioStream" uid="uid://bdw2ed2dok5t7" path="res://assets/sounds/ui/click2.ogg" id="4_ujyej"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_fsqr5"]
+action = &"close_window"
+
+[sub_resource type="Shortcut" id="Shortcut_ujyej"]
+events = [SubResource("InputEventAction_fsqr5")]
+
+[node name="SumikoEnding" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fsqr5")
+metadata/_edit_vertical_guides_ = [960.0]
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="SumikoSprite" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -500.0
+offset_top = -491.0
+offset_right = 574.0
+offset_bottom = 43.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ujyej")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DialogueContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -578.497
+offset_top = -337.0
+offset_right = 578.503
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_ujyej")
+
+[node name="MarginContainer" type="MarginContainer" parent="DialogueContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogueContainer/MarginContainer"]
+layout_mode = 2
+text = "placeholder"
+
+[node name="SkipButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 437.0
+offset_top = -114.0
+offset_right = 576.0
+offset_bottom = -74.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_ujyej")
+shortcut = SubResource("Shortcut_ujyej")
+shortcut_in_tooltip = false
+text = "skip"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_ujyej")
+bus = &"SFX"
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]
+[connection signal="gui_input" from="SumikoSprite" to="." method="_on_gui_input"]
+[connection signal="gui_input" from="DialogueContainer" to="." method="_on_dialogue_container_gui_input"]
+[connection signal="mouse_entered" from="SkipButton" to="." method="_on_skip_button_mouse_entered"]
+[connection signal="pressed" from="SkipButton" to="." method="_on_skip_button_pressed"]

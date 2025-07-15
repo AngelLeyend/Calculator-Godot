@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://cklp6whyes4g8"]
+
+[ext_resource type="Script" uid="uid://pj42xblmosdc" path="res://scripts/splash_screen.gd" id="1_03tic"]
+[ext_resource type="Texture2D" uid="uid://4xvkoy2aogib" path="res://assets/sprites/splash_screens/logo_large_monochrome_dark.png" id="2_03tic"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("splash_screen_container")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_03tic")
+splash_screen_container = NodePath("SplashContainer")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="SplashContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Screen1" type="TextureRect" parent="SplashContainer"]
+layout_mode = 2
+texture = ExtResource("2_03tic")

@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://7o1ucgaksca5"]
+
+[ext_resource type="FontFile" uid="uid://bo07ye74sidlm" path="res://assets/fonts/Kenney Thick.ttf" id="1_7mm88"]
+[ext_resource type="Texture2D" uid="uid://ct8j0bhwts1ut" path="res://assets/sprites/up window.png" id="2_m7gqe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7gqe"]
+bg_color = Color(0.658824, 0.156863, 0.0784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_udew0"]
+bg_color = Color(0.988235, 0.282353, 0.282353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iyf87"]
+bg_color = Color(0.365388, 0.0692217, 0.0248525, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_udew0"]
+texture = ExtResource("2_m7gqe")
+texture_margin_left = 5.0
+texture_margin_top = 5.0
+texture_margin_right = 5.0
+texture_margin_bottom = 5.0
+
+[resource]
+Button/fonts/font = ExtResource("1_7mm88")
+Button/styles/hover = SubResource("StyleBoxFlat_m7gqe")
+Button/styles/normal = SubResource("StyleBoxFlat_udew0")
+Button/styles/pressed = SubResource("StyleBoxFlat_iyf87")
+Panel/styles/panel = SubResource("StyleBoxTexture_udew0")

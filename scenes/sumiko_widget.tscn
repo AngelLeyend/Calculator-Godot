@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://c81fy2ud17r8o"]
+
+[ext_resource type="Script" uid="uid://brqunoxxmk8kv" path="res://scripts/sumiko_widget.gd" id="1_r83a5"]
+[ext_resource type="Texture2D" uid="uid://4mcj35vii6o0" path="res://assets/sprites/sumiko/sumiko_4.png" id="2_oihwp"]
+[ext_resource type="Theme" uid="uid://cpqvcxoa04d6h" path="res://themes/WidgetTextbox.tres" id="3_8yooh"]
+[ext_resource type="Texture2D" uid="uid://8d34l4r7w8k1" path="res://assets/sprites/sumiko_button.png" id="4_eidc6"]
+[ext_resource type="AudioStream" uid="uid://bdw2ed2dok5t7" path="res://assets/sounds/ui/click2.ogg" id="4_oihwp"]
+[ext_resource type="Texture2D" uid="uid://cxt1jfvdm8hke" path="res://assets/sprites/sumiko_hover.png" id="5_0qi0i"]
+
+[node name="SumikoWidget" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r83a5")
+
+[node name="ConsejosLayer" type="CanvasLayer" parent="."]
+layer = 26
+visible = false
+
+[node name="Panel" type="Panel" parent="ConsejosLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="ConsejosLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.524
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -970.0
+offset_top = -461.92
+offset_right = 217.0
+offset_bottom = 209.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2_oihwp")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DialogueContainer" type="PanelContainer" parent="ConsejosLayer"]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.633
+anchor_right = 0.5
+anchor_bottom = 0.633
+offset_left = -260.0
+offset_top = -599.64
+offset_right = 820.0
+offset_bottom = -272.64
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("3_8yooh")
+
+[node name="MarginContainer" type="MarginContainer" parent="ConsejosLayer/DialogueContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="DialogueLabel" type="RichTextLabel" parent="ConsejosLayer/DialogueContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "placeholder"
+
+[node name="SumikoButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 16.0
+offset_right = 357.0
+offset_bottom = 352.0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+texture_normal = ExtResource("4_eidc6")
+texture_hover = ExtResource("5_0qi0i")
+stretch_mode = 0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_oihwp")
+autoplay = true
+bus = &"SFX"
+
+[connection signal="gui_input" from="ConsejosLayer/Panel" to="." method="_on_panel_gui_input"]
+[connection signal="gui_input" from="ConsejosLayer/TextureRect" to="." method="_on_panel_gui_input"]
+[connection signal="mouse_entered" from="SumikoButton" to="." method="_on_sumiko_button_mouse_entered"]
+[connection signal="mouse_exited" from="SumikoButton" to="." method="_on_sumiko_button_mouse_exited"]
+[connection signal="pressed" from="SumikoButton" to="." method="_on_sumiko_button_pressed"]

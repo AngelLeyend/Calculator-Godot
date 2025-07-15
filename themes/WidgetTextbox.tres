@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://cpqvcxoa04d6h"]
+
+[ext_resource type="Texture2D" uid="uid://vvin7knwaqln" path="res://assets/sprites/sumiko_globe.png" id="1_b8lv1"]
+[ext_resource type="FontFile" uid="uid://tuk2ljfd1c1v" path="res://assets/fonts/Kenney Future.ttf" id="2_xr7f2"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fbchx"]
+texture = ExtResource("1_b8lv1")
+
+[resource]
+Label/colors/font_color = Color(0.407843, 0.376471, 0.360784, 1)
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_fbchx")
+RichTextLabel/colors/default_color = Color(0.235894, 0.214879, 0.204364, 1)
+RichTextLabel/fonts/normal_font = ExtResource("2_xr7f2")

@@ -1,0 +1,459 @@
+[gd_scene load_steps=48 format=3 uid="uid://cg30fudavx12"]
+
+[ext_resource type="Theme" uid="uid://nbdhao1y10i0" path="res://settings/calculator_theme.tres" id="1_iofbv"]
+[ext_resource type="Script" uid="uid://dl13y0xg6je03" path="res://scripts/calculator.gd" id="1_j8sg6"]
+[ext_resource type="Theme" uid="uid://0s3wvncip56i" path="res://themes/calculadora_gld.tres" id="1_sio27"]
+[ext_resource type="FontFile" uid="uid://vc4ljp434yin" path="res://assets/sprites/numbers/iconsV1.ttf" id="3_j8sg6"]
+[ext_resource type="Theme" uid="uid://dl6hjbsplbhxf" path="res://themes/BarraArribaGold.tres" id="5_sio27"]
+
+[sub_resource type="InputEventAction" id="InputEventAction_864p1"]
+action = &"7"
+
+[sub_resource type="Shortcut" id="Shortcut_p7y4d"]
+events = [SubResource("InputEventAction_864p1")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_vlk2w"]
+action = &"8"
+
+[sub_resource type="Shortcut" id="Shortcut_pspxm"]
+events = [SubResource("InputEventAction_vlk2w")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_uajx3"]
+action = &"9"
+
+[sub_resource type="Shortcut" id="Shortcut_rmndt"]
+events = [SubResource("InputEventAction_uajx3")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_8hjiu"]
+action = &"clear"
+
+[sub_resource type="Shortcut" id="Shortcut_4ybf4"]
+events = [SubResource("InputEventAction_8hjiu")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_jgmda"]
+action = &"()"
+
+[sub_resource type="Shortcut" id="Shortcut_4a2e8"]
+events = [SubResource("InputEventAction_jgmda")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4kog5"]
+action = &"4"
+
+[sub_resource type="Shortcut" id="Shortcut_i40wg"]
+events = [SubResource("InputEventAction_4kog5")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_p2s8h"]
+action = &"5"
+
+[sub_resource type="Shortcut" id="Shortcut_lu1o0"]
+events = [SubResource("InputEventAction_p2s8h")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_odtfm"]
+action = &"6"
+
+[sub_resource type="Shortcut" id="Shortcut_lmwqp"]
+events = [SubResource("InputEventAction_odtfm")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_l1q0h"]
+action = &"-"
+
+[sub_resource type="Shortcut" id="Shortcut_6lj6h"]
+events = [SubResource("InputEventAction_l1q0h")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_pspxm"]
+action = &"*"
+
+[sub_resource type="Shortcut" id="Shortcut_uajx3"]
+events = [SubResource("InputEventAction_pspxm")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_j8sg6"]
+action = &"1"
+
+[sub_resource type="Shortcut" id="Shortcut_q1y2q"]
+events = [SubResource("InputEventAction_j8sg6")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_q1y2q"]
+action = &"2"
+
+[sub_resource type="Shortcut" id="Shortcut_sio27"]
+events = [SubResource("InputEventAction_q1y2q")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_6m6qa"]
+action = &"3"
+
+[sub_resource type="Shortcut" id="Shortcut_lnsde"]
+events = [SubResource("InputEventAction_6m6qa")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_sio27"]
+action = &"+"
+
+[sub_resource type="Shortcut" id="Shortcut_jgmda"]
+events = [SubResource("InputEventAction_sio27")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_rmndt"]
+action = &"div"
+
+[sub_resource type="Shortcut" id="Shortcut_8hjiu"]
+events = [SubResource("InputEventAction_rmndt")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4a2e8"]
+action = &"dot"
+
+[sub_resource type="Shortcut" id="Shortcut_pm7w1"]
+events = [SubResource("InputEventAction_4a2e8")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_pm7w1"]
+action = &"0"
+
+[sub_resource type="Shortcut" id="Shortcut_864p1"]
+events = [SubResource("InputEventAction_pm7w1")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_p7y4d"]
+action = &"del"
+
+[sub_resource type="Shortcut" id="Shortcut_vlk2w"]
+events = [SubResource("InputEventAction_p7y4d")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_3bmnh"]
+action = &"equal"
+
+[sub_resource type="Shortcut" id="Shortcut_ug3jq"]
+events = [SubResource("InputEventAction_3bmnh")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_4ybf4"]
+action = &"%"
+
+[sub_resource type="Shortcut" id="Shortcut_4kog5"]
+events = [SubResource("InputEventAction_4ybf4")]
+
+[sub_resource type="InputEventAction" id="InputEventAction_i40wg"]
+action = &"close_window"
+
+[sub_resource type="Shortcut" id="Shortcut_p2s8h"]
+events = [SubResource("InputEventAction_i40wg")]
+
+[node name="CalculatorContainer" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -387.0
+offset_top = -449.0
+offset_right = 388.0
+offset_bottom = 367.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_sio27")
+script = ExtResource("1_j8sg6")
+metadata/_edit_vertical_guides_ = [960.0]
+metadata/_edit_horizontal_guides_ = [540.0]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_vertical = 3
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 44
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="MarginContainer3" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 15
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_iofbv")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/PanelContainer"]
+layout_direction = 2
+layout_mode = 2
+theme = ExtResource("1_iofbv")
+horizontal_scroll_mode = 2
+vertical_scroll_mode = 0
+
+[node name="CalculatorLabel" type="Label" parent="MarginContainer/VBoxContainer/PanelContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+theme = ExtResource("1_iofbv")
+text = "0000000000000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+
+[node name="ButtonGrid" type="GridContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 5
+
+[node name="7" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_p7y4d")
+shortcut_in_tooltip = false
+text = "7"
+
+[node name="8" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_pspxm")
+shortcut_in_tooltip = false
+text = "8"
+icon_alignment = 1
+
+[node name="9" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_rmndt")
+shortcut_in_tooltip = false
+text = "9"
+
+[node name="CLEAN" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_4ybf4")
+shortcut_in_tooltip = false
+text = "c"
+
+[node name="PARS" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_4a2e8")
+shortcut_in_tooltip = false
+text = "()"
+
+[node name="4" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_i40wg")
+shortcut_in_tooltip = false
+text = "4"
+icon_alignment = 1
+
+[node name="5" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_lu1o0")
+shortcut_in_tooltip = false
+text = "5"
+
+[node name="6" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_lmwqp")
+shortcut_in_tooltip = false
+text = "6"
+
+[node name="RES" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_6lj6h")
+shortcut_in_tooltip = false
+text = "-"
+
+[node name="MUL" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_uajx3")
+shortcut_in_tooltip = false
+text = "x"
+icon_alignment = 1
+
+[node name="1" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_q1y2q")
+shortcut_in_tooltip = false
+text = "1"
+icon_alignment = 1
+
+[node name="2" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_sio27")
+shortcut_in_tooltip = false
+text = "2"
+
+[node name="3" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_lnsde")
+shortcut_in_tooltip = false
+text = "3"
+icon_alignment = 1
+
+[node name="SUM" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_jgmda")
+shortcut_in_tooltip = false
+text = "+"
+icon_alignment = 1
+
+[node name="DIV" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_8hjiu")
+shortcut_in_tooltip = false
+text = "/"
+
+[node name="DOT" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_pm7w1")
+shortcut_in_tooltip = false
+text = "."
+
+[node name="0" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_864p1")
+shortcut_in_tooltip = false
+text = "0"
+
+[node name="DEL" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_j8sg6")
+shortcut = SubResource("Shortcut_vlk2w")
+shortcut_in_tooltip = false
+text = "B"
+icon_alignment = 1
+expand_icon = true
+
+[node name="IGUAL" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_ug3jq")
+shortcut_in_tooltip = false
+text = "="
+
+[node name="PER" type="Button" parent="MarginContainer/VBoxContainer/ButtonGrid"]
+custom_minimum_size = Vector2(125, 125)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+shortcut = SubResource("Shortcut_4kog5")
+shortcut_in_tooltip = false
+text = "%"
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 30
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.0
+grow_horizontal = 2
+theme = ExtResource("5_sio27")
+
+[node name="closebutton" type="Button" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -34.0
+offset_top = 7.0
+offset_right = -4.0
+offset_bottom = 37.0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+shortcut = SubResource("Shortcut_p2s8h")
+shortcut_in_tooltip = false
+text = "x"
+
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/7" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/7" to="." method="_on_number_pressed" binds= [7]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/8" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/8" to="." method="_on_number_pressed" binds= [8]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/9" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/9" to="." method="_on_number_pressed" binds= [9]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/CLEAN" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/CLEAN" to="." method="_on_operator_pressed" binds= ["C"]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/PARS" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/PARS" to="." method="_on_operator_pressed" binds= ["()"]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/4" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/4" to="." method="_on_number_pressed" binds= [4]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/5" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/5" to="." method="_on_number_pressed" binds= [5]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/6" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/6" to="." method="_on_number_pressed" binds= [6]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/RES" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/RES" to="." method="_on_operator_pressed" binds= ["-"]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/MUL" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/MUL" to="." method="_on_operator_pressed" binds= ["*"]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/1" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/1" to="." method="_on_number_pressed" binds= [1]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/2" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/2" to="." method="_on_number_pressed" binds= [2]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/3" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/3" to="." method="_on_number_pressed" binds= [3]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/SUM" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/SUM" to="." method="_on_operator_pressed" binds= ["+"]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/DIV" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/DIV" to="." method="_on_operator_pressed" binds= ["/"]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/DOT" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/DOT" to="." method="_on_operator_pressed" binds= ["."]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/0" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/0" to="." method="_on_number_pressed" binds= [0]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/DEL" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/DEL" to="." method="_on_operator_pressed" binds= ["DEL"]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/IGUAL" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/IGUAL" to="." method="_on_operator_pressed" binds= ["="]]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/ButtonGrid/PER" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/ButtonGrid/PER" to="." method="_on_operator_pressed" binds= ["%"]]
+[connection signal="mouse_entered" from="Panel/closebutton" to="." method="_on_button_mouse_entered"]
+[connection signal="pressed" from="Panel/closebutton" to="." method="_on_closebutton_pressed"]

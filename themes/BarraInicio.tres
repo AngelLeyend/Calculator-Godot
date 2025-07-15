@@ -1,0 +1,13 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://lhms4ylh083g"]
+
+[ext_resource type="FontFile" uid="uid://tuk2ljfd1c1v" path="res://assets/fonts/Kenney Future.ttf" id="1_j15jk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tcue0"]
+bg_color = Color(0.690196, 0.690196, 0.721569, 1)
+border_width_top = 5
+border_color = Color(0.988235, 0.988235, 0.988235, 1)
+
+[resource]
+Label/font_sizes/font_size = 22
+Label/fonts/font = ExtResource("1_j15jk")
+Panel/styles/panel = SubResource("StyleBoxFlat_tcue0")
