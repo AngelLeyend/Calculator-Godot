@@ -28,6 +28,9 @@ func _ready():
 
 	#Conectar señal fin del juego
 	Archivements.finished_game.connect(_on_finished_game)
+
+	#Set default language
+	TranslationServer.set_locale(GlobalConfigFile.load_game_settings().get("language"))
 	
 
 func start_sequence():

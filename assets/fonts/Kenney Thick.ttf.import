@@ -26,7 +26,7 @@ subpixel_positioning=4
 keep_rounding_remainders=true
 oversampling=0.0
 Fallbacks=null
-fallbacks=[]
+fallbacks=[Resource("res://assets/fonts/NotoSansJP-SemiBold.ttf")]
 Compress=null
 compress=true
 preload=[{
@@ -36,6 +36,8 @@ preload=[{
 "size": Vector2i(16, 0),
 &"variation_embolden": 0.0
 }]
-language_support={}
+language_support={
+"ja": true
+}
 script_support={}
 opentype_features={}

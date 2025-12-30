@@ -4,21 +4,25 @@
 		"members": ["@lancibar|https://twitter.com/XLanci","@Pik_Anime|https://twitter.com/Pik_Anime"]
 	},	
 	{
+		"role": "credits_sumiko_voice",
+		"members": ["Hina Dogemura|https://hinatchii.carrd.co/"]
+	},
+	{
 		"role": "credits_coding",
 		"members": ["Angel Issac Lopez|https://github.com/AngelLeyend"]
 	},
 	{
-		"role": "credits_covers",
-		"members": ["Freepik|https://www.freepik.com"]
-	},
-	{
 		"role": "credits_sounds",
 		"members": ["Kenney Assets|https://kenney.nl", 
-					"DOVA SYNDROME|https://dova-s.jp"]
+					"DOVA SYNDROME|https://dova-s.jp",
+					"Diett Colaa|https://open.spotify.com/intl-es/artist/75LxlR7pH6fY62STwrTDHG?si=mQk7JFMcQBGpU9ymxPvjJQ"
+					]
 	},
 	{
 		"role": "credits_images",
 		"members": ["Kenney Assets|https://kenney.nl", 
+		"Anzimuz|https://ansimuz.itch.io/",
+		"Freepik|https://www.freepik.com",
 		"Craftpix|https://craftpix.net"]
 	},
 	
@@ -35,6 +39,9 @@
 					"Lofi_NightTrain - nekoto|https://dova-s.jp/EN/bgm/play19202.html",
 					"Flowers at night - Flehmann|https://dova-s.jp/EN/bgm/play17289.html",
 					"Shibuya Nightscape - オオヒラセイジ|https://dova-s.jp/EN/bgm/play17175.html",
-					"Cafe 3-chome - Crep|https://dova-s.jp/EN/bgm/play18372.html"]
+					"FRAGILE ROMANCE - Diett Colaa|https://diettcolaa.bandcamp.com/track/fragile-romance",
+					"Geocities - Diett Colaa|https://diettcolaa.bandcamp.com/track/geocities",
+					".why - Diett Colaa|https://diettcolaa.bandcamp.com/track/why",
+					"training day - Diett Colaa|https://diettcolaa.bandcamp.com/track/training-day"]
 	}
 ]

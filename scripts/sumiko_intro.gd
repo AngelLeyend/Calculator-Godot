@@ -46,7 +46,8 @@ var input_cooldown := false # Cooldown para evitar inputs muy rápidos
 
 # Rutas actualizadas a tus nodos:
 @onready var dialog_label: RichTextLabel = $CanvasLayer/DialogueContainer/MarginContainer/DialogueLabel
-@onready var type_snd: AudioStreamPlayer = $AudioStreamPlayer
+# @onready var type_snd: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var canvas = $CanvasLayer
 @onready var button = $SumikoIntroButton
 @onready var panel = $Panel
@@ -69,6 +70,11 @@ func show_dialog():
     for tag in bbcode_icons.keys():
         full_line = full_line.replace(tag, bbcode_icons[tag])
     
+
+    # Reproducir voz para este diálogo
+    VoiceManager.play_voice(dialog_data["key"])
+
+
     await sumiko_jump_and_next_sprite(dialog_data["sprite"]) # <-- ahora espera el salto y cambio de sprite
     await type_line(full_line)
     
@@ -156,9 +162,9 @@ func type_line(line: String) -> void:
         dialog_label.text += line[i]
         i += 1
 
-        if type_snd and type_snd.stream:
-            type_snd.stop()
-            type_snd.play()
+        # if type_snd and type_snd.stream:
+        #     type_snd.stop()
+        #     type_snd.play()
             
         if not skip_typewriting:
             await get_tree().create_timer(type_speed).timeout
@@ -226,6 +232,9 @@ func end_intro_sequence():
     if intro_finished:
         return # Evitar llamadas múltiples
         
+    # Detener voz
+    VoiceManager.stop_voice()
+
     # Cancelar cualquier tween de tipeo activo
     if current_typing_tween:
         current_typing_tween.kill()

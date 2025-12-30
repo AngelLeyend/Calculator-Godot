@@ -157,6 +157,13 @@ text = "sfx_options"
 [node name="SFXSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
+[node name="Label6" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "voice_options"
+
+[node name="VoiceSlider" type="HSlider" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 40
@@ -244,6 +251,9 @@ size_flags_vertical = 3
 [connection signal="drag_ended" from="MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="mouse_entered" from="MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_reset_button_mouse_entered"]
 [connection signal="value_changed" from="MarginContainer/VBoxContainer/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="drag_ended" from="MarginContainer/VBoxContainer/VoiceSlider" to="." method="_on_voice_slider_drag_ended"]
+[connection signal="mouse_entered" from="MarginContainer/VBoxContainer/VoiceSlider" to="." method="_on_reset_button_mouse_entered"]
+[connection signal="value_changed" from="MarginContainer/VBoxContainer/VoiceSlider" to="." method="_on_voice_slider_value_changed"]
 [connection signal="mouse_entered" from="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_reset_button_mouse_entered"]
 [connection signal="pressed" from="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/YesButton" to="." method="_on_yes_button_pressed"]
 [connection signal="mouse_entered" from="ResetLayer/ResetPanel/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/NoButton" to="." method="_on_reset_button_mouse_entered"]

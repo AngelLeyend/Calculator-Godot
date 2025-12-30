@@ -80,6 +80,8 @@ func _on_sumiko_button_pressed() -> void:
 
 func show_dialog():
     var full_line := tr(current_advice_key).strip_edges()
+    # Reproducir voz para el consejo
+    VoiceManager.play_voice(current_advice_key)
     await type_line(full_line)
 
 func _unhandled_input(event):
@@ -109,8 +111,8 @@ func type_line(line: String) -> void:
         dialog_label.text += line[i]
         
         # Reproducir sonido solo si no está ya reproduciéndose
-        if type_snd.stream and not type_snd.playing:
-            type_snd.play()
+        # if type_snd.stream and not type_snd.playing:
+        #     type_snd.play()
         
         await get_tree().create_timer(type_speed).timeout
 
@@ -129,6 +131,10 @@ func hide_dialog_with_fade():
     if not canvas.visible or is_dialog_opening:
         return
     
+    # Detener la voz al cerrar
+    VoiceManager.stop_voice()
+
+
     # Limpiar todos los tweens y estados
     _cleanup_tweens()
     is_typing = false

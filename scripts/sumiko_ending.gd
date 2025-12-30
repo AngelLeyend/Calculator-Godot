@@ -37,7 +37,8 @@ var input_cooldown := false # Cooldown para evitar inputs muy rápidos
 
 # Rutas actualizadas a tus nodos:
 @onready var dialog_label: RichTextLabel = $DialogueContainer/MarginContainer/DialogueLabel
-@onready var type_snd: AudioStreamPlayer = $AudioStreamPlayer
+# @onready var type_snd: AudioStreamPlayer = $AudioStreamPlayer
+@onready var audio_player: AudioStreamPlayer = $AudioStreamPlayer
 
 func _ready():
     show_dialog()
@@ -50,6 +51,9 @@ func show_dialog():
     var dialog_data = dialogs[current_dialog]
     var full_line := tr(dialog_data["key"]).strip_edges()
     
+    # Reproducir voz para este diálogo
+    VoiceManager.play_voice(dialog_data["key"])
+
     await sumiko_jump_and_next_sprite(dialog_data["sprite"]) # <-- ahora espera el salto y cambio de sprite
     await type_line(full_line)
     
@@ -93,6 +97,10 @@ func end_game_sequence():
     if ending_finished:
         return # Evitar llamadas múltiples
         
+    # Detener voz
+    VoiceManager.stop_voice()
+
+
     # Cancelar cualquier tween de tipeo activo
     if current_typing_tween:
         current_typing_tween.kill()
@@ -124,9 +132,9 @@ func type_line(line: String) -> void:
         dialog_label.text += line[i]
         i += 1
         
-        if type_snd and type_snd.stream:
-            type_snd.stop()
-            type_snd.play()
+        # if type_snd and type_snd.stream:
+        #     type_snd.stop()
+        #     type_snd.play()
             
         if not skip_typewriting:
             await get_tree().create_timer(type_speed).timeout

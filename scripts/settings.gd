@@ -4,6 +4,7 @@ extends Control
 @onready var volume_slider = $MarginContainer/VBoxContainer/VolumeSlider
 @onready var music_slider = $MarginContainer/VBoxContainer/MusicSlider
 @onready var sfx_slider = $MarginContainer/VBoxContainer/SFXSlider
+@onready var voice_slider = $MarginContainer/VBoxContainer/VoiceSlider
 @onready var aspect_ratio_options = $MarginContainer/VBoxContainer/OptionButton
 @onready var ResetConfirmCanvas = $ResetLayer
 
@@ -21,6 +22,7 @@ func _ready(): #CARGA LOS VALORES DE SETTINGS.INI EN LA INTERFAZ
 	volume_slider.value = audio_settings["volume_master"]
 	music_slider.value = audio_settings["volume_music"]
 	sfx_slider.value = audio_settings["volume_sfx"]
+	voice_slider.value = audio_settings["volume_voice"]
 
 
 
@@ -52,7 +54,9 @@ func _on_sfx_slider_value_changed(value:float) -> void:
 func _on_music_slider_value_changed(value:float) -> void:
 	AudioServer.set_bus_volume_db(1, linear_to_db(music_slider.value / 100.0))
 	AudioUIManager.play("button_pressed")  # O cualquier otro sonido SFX que tengas
-
+func _on_voice_slider_value_changed(value:float) -> void:
+	AudioServer.set_bus_volume_db(3, linear_to_db(voice_slider.value / 100.0))
+	AudioUIManager.play("button_pressed")  # O cualquier otro sonido SFX que tengas
 
 
 
@@ -69,6 +73,12 @@ func _on_sfx_slider_drag_ended(value_changed:bool) -> void:
 func _on_music_slider_drag_ended(value_changed:bool) -> void:
 	if value_changed:
 		GlobalConfigFile.save_audio_setting("volume_music", music_slider.value)
+
+
+func _on_voice_slider_drag_ended(value_changed:bool) -> void:
+	if value_changed:
+		GlobalConfigFile.save_audio_setting("volume_voice", voice_slider.value)
+
 
 
 func _on_closebutton_pressed() -> void:

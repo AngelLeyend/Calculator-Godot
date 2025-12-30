@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Calculator"
-config/version="1.0"
+config/version="2.0"
 run/main_scene="uid://choxcjctrpps"
 config/features=PackedStringArray("4.4", "Mobile")
 run/low_processor_mode=true
@@ -29,6 +29,7 @@ Archivements="*res://settings/archivements.gd"
 SaveManager="*res://settings/SaveManager.gd"
 MusicManager="*res://settings/MusicManager.gd"
 AudioUIManager="*res://settings/AudioUIManager.gd"
+VoiceManager="*res://settings/VoiceManager.gd"
 
 [display]
 

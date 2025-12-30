@@ -40,5 +40,33 @@
 		"duration": "2:25",
 		"audio_path": "res://assets/sounds/music/song6.ogg",
 		"cover_path": "res://assets/sounds/music/song6.png"
+	},
+	{
+		"title": "FRAGILE ROMANCE",
+		"artist": "Diett Colaa",
+		"duration": "2:35",
+		"audio_path": "res://assets/sounds/music/song7.ogg",
+		"cover_path": "res://assets/sounds/music/song7.png"
+	},
+	{
+		"title": "Geocities",
+		"artist": "Diett Colaa",
+		"duration": "2:16",
+		"audio_path": "res://assets/sounds/music/song8.ogg",
+		"cover_path": "res://assets/sounds/music/song8.png"
+	},
+	{
+		"title": ".why",
+		"artist": "Diett Colaa",
+		"duration": "2:25",
+		"audio_path": "res://assets/sounds/music/song9.ogg",
+		"cover_path": "res://assets/sounds/music/song9.png"
+	},
+	{
+		"title": "training day",
+		"artist": "Diett Colaa",
+		"duration": "1:13",
+		"audio_path": "res://assets/sounds/music/song10.ogg",
+		"cover_path": "res://assets/sounds/music/song10.png"
 	}
 ]

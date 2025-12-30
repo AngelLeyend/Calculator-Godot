@@ -10,6 +10,7 @@ func _ready() -> void:
 
 
 func _on_button_pressed(idioma_id:String) -> void:
+	GlobalConfigFile.save_game_setting("language", idioma_id)
 	TranslationServer.set_locale(idioma_id)
 	AudioUIManager.play("button_pressed")
 
